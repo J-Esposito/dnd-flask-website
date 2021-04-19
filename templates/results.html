@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<div class="row">
+		<h3 class="display"> Events </h3>
+	</div>
+	
+	{% for i in json_data %}
+		<div class="card w-50 mb-5">
+			<img class="card-img-top" src="{{ i['imageLink'] }}">
+			<div class="card-body">
+				<h5 class="card-title">{{ i['name'] }}</h5>
+				<p class="card-text"> Start time: {{ i['start'] }} </p>
+				<a href="{{ i['link'] }}" class="card-link"> Click here to go to event webpage </a>
+			</div>
+		</div>
+	{% endfor %}
+	
+{% endblock %}
